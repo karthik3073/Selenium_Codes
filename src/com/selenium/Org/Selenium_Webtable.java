@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import net.bytebuddy.dynamic.scaffold.InstrumentedType.Frozen;
 
-public class Webtable {
+public class Selenium_Webtable {
 
 	public static void main(String[] args) {
 

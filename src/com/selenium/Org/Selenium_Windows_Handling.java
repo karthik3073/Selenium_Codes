@@ -42,7 +42,7 @@ public class Selenium_Windows_Handling {
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 
-		WebElement Best_Sellers = driver.findElement(By.linkText("Best Sellers"));
+		WebElement Best_Sellers = driver.findElement(By.xpath("//a[text()='Best Sellers']"));
 		a.contextClick(Best_Sellers).build().perform();
 		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_DOWN);
@@ -64,17 +64,19 @@ public class Selenium_Windows_Handling {
 			System.out.println(title);
 		}
 
-		String Need = "Mobile Phones: Buy New Mobiles Online at Best Prices in India | Buy Cell Phones Online - Amazon.in";
-//		String d = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
+//		String Need = "Mobile Phones: Buy New Mobiles Online at Best Prices in India | Buy Cell Phones Online - Amazon.in";
+		String d = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
 //		String b = "Amazon.in Bestsellers: The most popular items on Amazon";
 //		String c = "Gift Cards & Vouchers Online : Buy Gift Vouchers & E Gift Cards Online in India - Amazon.in";
 
+		// ! This is not symbol. If we want to close particular window you should use
+		// (not equals) in If condition
 		for (String id : tabs) {
-			if (driver.switchTo().window(id).getTitle().equals(Need)) {
-				break;
-//			
+			if (!driver.switchTo().window(id).getTitle().equals(d)) {
+				driver.close();
 			}
 
 		}
+
 	}
 }
